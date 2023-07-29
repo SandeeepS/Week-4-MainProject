@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+
+    <title>Login</title>
+  </head>
+  <body>
+
+    <section>
+        <div class="container mt-5 pt-5">
+            <div class="row">
+                <div class="col-12 col-sm-8 col-md-6 m-auto">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <svg  class="mx-auto d-flex" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle " viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                              </svg>
+                              <div class="card-body d-flex justify-content-center align-items-center" id="error-message">
+                             <% if (locals.error) { %>
+                                <p style="color: red;"><%= error %></p>
+                              <% } %>
+                            </div>
+                             <form action="/login" method="post"  onsubmit="return validateForm()">
+                                <input type="text" name="username" id="username" class="form-control my-4 py-2" placeholder="username">
+                                <input type="password" name="password" id="password" class="form-control my-4 py-2" placeholder="password">
+                                <div class="text-center mt-3">
+                                  <input type="submit" value="Login" class="btn btn-primary">
+                                
+                                </div>
+                             </form>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script>
+
+
+function validateForm(){
+    // Get the user name and password from the form
+    const usernamefrom = document.getElementById('username').value;
+    const passwordfrom = document.getElementById('password').value;
+  
+    if(usernamefrom ===""||usernamefrom ===null || passwordfrom===""){
+        event.preventDefault();
+        alert("please fill the form");
+        return false;
+    }else{
+        return true;
+    }
+
+}
+    
+   
+
+  </script>
+ <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Function to remove the error message element after a certain duration
+    function removeErrorMessage() {
+      $("#error-message").remove();
+    }
+  
+    // Wait for DOM to be ready
+    $(document).ready(function() {
+      // Call the removeErrorMessage function after 5 seconds (5000 milliseconds)
+      setTimeout(removeErrorMessage, 2000); // Adjust the time as needed
+    });
+  </script>-->
+  
+  
+  </body>
+</html>
