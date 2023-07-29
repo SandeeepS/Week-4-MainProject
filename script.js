@@ -46,15 +46,15 @@ var session;
 app.get('/',(req,res) => {
   session=req.session;
   if(session.userid){
-      //res.send("Welcome User <a href=\'/logout'>click to logout</a>");
+      
       res.render('home');
   }else
- // res.sendFile('views/index.html',{root:__dirname})
+
  res.render('index');
 });
 
 
-app.post('/login',(req,res)=>{
+app.post('/home',(req,res)=>{
   const {username,password} = req.body;
   if(username === usernamedb && password === passworddb){
     session = req.session;

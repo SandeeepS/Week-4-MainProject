@@ -28,7 +28,7 @@
                                 <p style="color: red;"><%= error %></p>
                               <% } %>
                             </div>
-                             <form action="/login" method="post"  onsubmit="return validateForm()">
+                             <form action="/home" method="post"  onsubmit="return validateForm()">
                                 <input type="text" name="username" id="username" class="form-control my-4 py-2" placeholder="username">
                                 <input type="password" name="password" id="password" class="form-control my-4 py-2" placeholder="password">
                                 <div class="text-center mt-3">
@@ -67,8 +67,8 @@ function validateForm(){
    
 
   </script>
- <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!--<script>
     // Function to remove the error message element after a certain duration
     function removeErrorMessage() {
       $("#error-message").remove();
